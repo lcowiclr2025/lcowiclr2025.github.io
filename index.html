@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="B-MoCA can serve as a testbed for mobile device control agents across diverse configurations.">
+  <meta property="og:title" content="B-MoCA: Benchmarking Mobile Device Control Agents Across Diverse Configurations"/>
+  <meta property="og:description" content="B-MoCA"/>
+  <meta property="og:url" content="https://b-moca.github.io/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  
+  <style>
+      .title-color {
+          background-color: #2CB17B;
+          text-align: center;
+          padding: 20px 0; 
+          margin: 0 auto; 
+          width: 100%; 
+      }
+  </style>
+  
+  <meta name="twitter:title" content="B-MoCA: Benchmarking Mobile Device Control Agents Across Diverse Configurations">
+  <meta name="twitter:description" content="B-MoCA serves as a testbed for mobile device control agents across dieverse configurations.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Mobile device control agent, benchmark, LLM agent">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>B-MoCA: A Benchmark for Evaluating Mobile Device Control Agents across Diverse Configuration</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="bowe_componets/css/bootstrap.table.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h2 class="title is-2 publication-title">B-MoCA: A Benchmark for Evaluating Mobile Device Control Agents across Diverse Configuration</h2>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="http://gimme1dollar.github.io/" target="_blank">Juyong Lee</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="" target="_blank">Taywon Min</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="" target="_blank">Minyong Ahn</a><sup>3</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://changyeon.page/" target="_blank">Changyoen Kim</a><sup>1</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://sites.google.com/view/kiminlee" target="_blank">Kimin Lee</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>KAIST,</span>
+              <span class="author-block"><sup>2</sup>Seoul National University,</span>
+              <span class="author-block"><sup>3</sup>Yonsei University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+              <span class="link-block">
+                <a href="" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+
+            <!-- Github link -->
+            <span class="link-block">
+              <a href="https://github.com/gimme1dollar/b-moca" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Header section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <h2 class="subtitle has-text-centered" style="font-size: 24px;">
+      <em><strong>B-MoCA</strong></em> can serve as a testbed for mobile device control agents across diverse device configurations
+    </h2>
+  </div>
+</section>
+<!-- Header section -->
+
+<!-- Demonstrations section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+
+      <div class="content has-text-centered">
+        <div class="columns is-centered">
+          <div class="column">
+            <img src="./static/images/demonstrations/airplane.gif" width="250" style='padding-left:10px;' class="interpolation-image"
+              alt="Interpolate start reference image.">
+            <br />
+            <p> "Turn on the airplane mode" </p>
+          </div>
+
+          <div class="column">
+            <img src="./static/images/demonstrations/alarm.gif" width="250" style='padding-left:10px;' class="interpolation-image"
+              alt="Interpolate start reference image.">
+            <br />
+            <p> "Create an alarm at 10:30 am" </p>
+          </div>
+          
+          <div class="column">
+            <img src="./static/images/demonstrations/brightness.gif" width="250" style='padding-left:10px;' class="interpolation-image"
+              alt="Interpolate start reference image.">
+            <br />
+            <p> "Decrease the screen brightness" </p>
+          </div>
+
+          <div class="column">
+            <img src="./static/images/demonstrations/call_911.gif" width="250" style='padding-left:10px;' class="interpolation-image"
+              alt="Interpolate start reference image.">
+            <br />
+            <p> "Call 911" </p>
+          </div>
+
+        </div>
+      </div>
+
+      <p class="has-text-centered" style="font-size:15pt"><b>[Exemplary daily tasks performed by the agents]</b></p>
+
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End demonstration section -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered is-vcentered">
+      <div class="column is-three-quarters">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Developing autonomous agents for mobile devices can significantly enhance user 
+            interactions by offering increased efficiency and accessibility. However, 
+            despite the growing interest in mobile device control agents, the absence 
+            of a commonly adopted benchmark makes it challenging to quantify scientific 
+            progress in this area. In this work, we introduce B-MoCA: a novel benchmark 
+            designed specifically for evaluating mobile device control agents. To create 
+            a realistic benchmark, we develop B-MoCA based on the Android operating system 
+            and define 60 common daily tasks. Importantly, we incorporate a randomization 
+            feature that changes various aspects of mobile devices, including user interface 
+            layouts and language settings, to assess generalization performance. We benchmark 
+            diverse agents, including agents employing large language models (LLMs) or 
+            multi-modal LLMs as well as agents trained from scratch using human expert 
+            demonstrations. While these agents demonstrate proficiency in executing 
+            straightforward tasks, their poor performance on complex tasks highlights 
+            significant opportunities for future research to enhance their effectiveness.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Intro section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <img src="static/images/main_figure.png" alt="MY ALT TEXT"
+      style="display: block; margin: 0 auto; width: 70%; height: auto;"
+      />
+  </div>
+</section>
+<!-- Intro section -->
+
+
+<!-- Demonstrations section >
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="title-color">
+          <h2 class="title" style="text-align: center; color: white;"> Practical Daily Tasks in B-MoCA </h2>
+      </div>
+
+      <md-block>
+        B-MoCA includes 60 tasks essential for managing digital devices, providing functionalities useful in daily routines 
+        such as setting the alarm or enabling airplane mode. These daily tasks are grounded to realistic scenarios and 
+        effectively simulate a wide range of essential skills for mobile device control problems, such as navigating 
+        multiple pages in the target application or manipulating UI elements (e.g., application icons, checkboxes, and sliders). 
+      </md-block>
+
+    </div>
+  </div>
+</div>
+</div>
+</section>
+< End demonstration section -->
+
+<!-- Environment section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+
+      <div class="title-color">
+          <h2 class="title" style="text-align: center; color: white;"> Diverse Device Environments </h2>
+      </div>
+  
+      <md-block>
+        <br>
+        In B-MoCA, users can configure environments with diverse device configurations.
+        We generate 45 environments (35 for training environments and 10 for test environments) 
+        with varying device types, languages, font sizes, wallpapers, and icon locations. 
+        <br><br>
+      </md-block>
+    </div>
+      
+    <!-- <img src="static/images/environments.png" alt="MY ALT TEXT"/> -->
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="item">
+        <img src="static/images/environments/00.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/environments/01.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/environments/02.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- End Environment section -->
+
+<!-- Baselines section -->
+<section>
+  <div class="container">
+
+    <div class="title-color">
+        <h2 class="title" style="text-align: center; color: white;"> Baselines Analysis</h2>
+    </div>
+
+    <md-block>
+      <br>
+      By employing the environments we configure, we benchmark state-of-the-art closed-source LLMs 
+      (Gemini-Pro and GPT-4) and MLLMs (Gemini-Pro-V and GPT-4V) as well as VLUI agents trained from scratch. 
+      We also compare open-source LLMs (Llama2, <span style="color: red">Llama3</span>, and AgentLM).
+      We further analyze different design choices (e.g., Set-of-Mark prompting for MLLM agents or effects of
+      the number of training environments for VLUI agents) 
+      for the agents. The lack of proficiencies of these agents in complex scenarios calls for future work!
+      <br><br>
+    </md-block>
+  </div>
+
+  <div class="cover" id="contentCover">
+    <!-- Baseline. -->
+    <div class="container-t">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="infoCard">
+            <div class="infoBody">
+              <div class="tabs is-centered example_lst">
+                <ul>
+                  <li class="is-active"><a title="Main Results">Main Results</a></li>
+                  <li><a title="LLM Agent Analysis">LLM Agent Analysis</a></li>
+                  <li><a title="MLLM Agent Analysis">MLLM Agent Analysis</a></li>
+                  <li><a title="VLUI Agent Analysis">VLUI Agent Analysis</a></li>
+                </ul>
+              </div>
+
+              <script type="text/javascript">
+                document.querySelectorAll(".example_lst li").forEach(e => {
+                  e.addEventListener("click", Click_1)
+                })
+
+                function Click_1(eve) {
+                  const iTxt = eve.srcElement.innerText
+                  for (let v of document.querySelectorAll(".example_lst a")) {
+                    if (iTxt === v.innerText) {
+                      v.parentElement.className = "is-active";
+                    } else {
+                      v.parentElement.className = "";
+                    }
+                  }
+                  for (let block of document.getElementsByClassName('lib_examples')) {
+                    block.style.display = (block.title === iTxt) ? 'block' : 'none';
+                  }
+                }
+                
+              </script>
+
+              <!-- Table (Main Result) -->
+              <div title="Main Results" class="lib_examples" id="BoardPanel1" style="display: block;">
+                <md-block>
+                  LLM agents are with three few-shot examples. MLLM agents are with one (Gemini-Pro-V) or three (GPT-4V) examples but without Set-of-Mark.
+                </md-block>
+
+                <table class="table performanceTable">
+                  <tr>
+                    <th>Task<br>Instruction</th>
+                    <th>LLM Agent<br>(Gemini-Pro)</th>
+                    <th>LLM Agent<br>(GPT-4)</th>
+                    <th>MLLM Agent<br>(Gemini-Pro-V)</th>
+                    <th>MLLM Agent<br>(GPT-4V)</th>
+                    <th>VLUI Agent<br>(from scrtach)</th>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Airplane</b> <br> <p style="font-size:12px"> "turn on the airplane mode" </p> </td>
+                    <td style="word-break:break-word;">47±09</td>
+                    <td style="word-break:break-word;">73±12</td>
+                    <td style="word-break:break-word;">13±09</td>
+                    <td style="word-break:break-word;"><b>80±06</b></td>
+                    <td style="word-break:break-word;">63±03</td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Alarm 1</b> <br> <p style="font-size:12px"> "turn on the alarm at 9 am" </p> </td>
+                    <td style="word-break:break-word;">30±06</td>
+                    <td style="word-break:break-word;"><b>67±03</b></td>
+                    <td style="word-break:break-word;">13±03</td>
+                    <td style="word-break:break-word;">60±15</td>
+                    <td style="word-break:break-word;"><b>67±03</b></td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Alarm 2</b> <br> <p style="font-size:12px"> "create an alarm at 10:30 am" </p> </td>
+                    <td style="word-break:break-word;">00±00</td>
+                    <td style="word-break:break-word;">00±00</td>
+                    <td style="word-break:break-word;">00±00</td>
+                    <td style="word-break:break-word;">23±03</td>
+                    <td style="word-break:break-word;"><b>47±03</b></td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Brightness</b> <br> <p style="font-size:12px"> "decrease the screen brightness in setting" </p> </td>
+                    <td style="word-break:break-word;">20±06</td>
+                    <td style="word-break:break-word;">73±09</td>
+                    <td style="word-break:break-word;">00±00</td>
+                    <td style="word-break:break-word;"><b>87±03</b></td>
+                    <td style="word-break:break-word;">60±00</td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Call 911</b> <br> <p style="font-size:12px"> "call 911" </p> </td>
+                    <td style="word-break:break-word;">03±03</td>
+                    <td style="word-break:break-word;">03±03</td>
+                    <td style="word-break:break-word;">03±03</td>
+                    <td style="word-break:break-word;">53±03</td>
+                    <td style="word-break:break-word;"><b>60±00</b></td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Language</b> <br> <p style="font-size:12px"> "go to 'add a language' page in setting" </p> </td>
+                    <td style="word-break:break-word;">00±00</td>
+                    <td style="word-break:break-word;">38±12</td>
+                    <td style="word-break:break-word;">00±00</td>
+                    <td style="word-break:break-word;">43±09</td>
+                    <td style="word-break:break-word;"><b>63±03</b></td>
+                  </tr>
+                </table>
+              </div>
+              <!-- End Table (Main Result) -->
+
+
+              <!-- Table (LLM) -->
+              <div title="LLM Agent Analysis" class="lib_examples" id="BoardPanel2" style="display: none;">
+                <md-block>
+                  LLM agents are in zero-shot.
+                </md-block>
+
+                <table class="table performanceTable">
+                  <tr>
+                    <th>Task<br>Instruction</th>
+                    <th>LLM Agent<br>(Llama2-7b)</th>
+                    <th>LLM Agent<br>(AgentLM-7b)</th>
+                    <th>LLM Agent<br>(<span style="color: red">Llama3</span>-8b)</th>
+                    <th>LLM Agent<br>(Gemini-Pro)</th>
+                    <th>LLM Agent<br>(GPT-4)</th>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Airplane</b> <br> <p style="font-size:12px"> "turn on the airplane mode" </p> </td>
+                    <td style="word-break:break-word;">00±00</td>
+                    <td style="word-break:break-word;">00±00</td>
+                    <td style="word-break:break-word;">63±03</td>
+                    <td style="word-break:break-word;"><b>87±03</b></td>
+                    <td style="word-break:break-word;">53±03</td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Alarm 1</b> <br> <p style="font-size:12px"> "turn on the alarm at 9 am" </p> </td>
+                    <td style="word-break:break-word;">00±00</td>
+                    <td style="word-break:break-word;">00±00</td>
+                    <td style="word-break:break-word;">00±00</td>
+                    <td style="word-break:break-word;">27±03</td>
+                    <td style="word-break:break-word;"><b>42±13</b></td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Brightness</b> <br> <p style="font-size:12px"> "decrease the screen brightness in setting" </p> </td>
+                    <td style="word-break:break-word;">00±00</td>
+                    <td style="word-break:break-word;">00±00</td>
+                    <td style="word-break:break-word;">17±03</td>
+                    <td style="word-break:break-word;">05±03</td>
+                    <td style="word-break:break-word;"><b>73±12</b></td>
+                  </tr>
+
+                </table>
+              </div>
+              <!-- End Table (LLM) -->
+
+
+              <!-- Table (MLLM) -->
+              <div title="MLLM Agent Analysis" class="lib_examples" id="BoardPanel3" style="display: none;">
+                <md-block>
+                  MLLM agents (GPT-4V) are with three few-shot examples.
+                </md-block>
+
+                <table class="table performanceTable">
+                  <tr>
+                    <th>Task<br>Instruction</th>
+                    <th>MLLM Agent<br>(w/o Set-of-Mark)</th>
+                    <th>MLLM Agent<br>(w/ Set-of-Mark)</th>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Airplane</b> <br> <p style="font-size:12px"> "turn on the airplane mode" </p> </td>
+                    <td style="word-break:break-word;">80±06</td>
+                    <td style="word-break:break-word;"><b>83±03</b></td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Alarm 1</b> <br> <p style="font-size:12px"> "turn on the alarm at 9 am" </p> </td>
+                    <td style="word-break:break-word;">60±15</td>
+                    <td style="word-break:break-word;"><b>62±09</b></td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Alarm 2</b> <br> <p style="font-size:12px"> "create an alarm at 10:30 am" </p> </td>
+                    <td style="word-break:break-word;"><b>23±03</b></td>
+                    <td style="word-break:break-word;">17±03</td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Brightness</b> <br> <p style="font-size:12px"> "decrease the screen brightness in setting" </p> </td>
+                    <td style="word-break:break-word;"><b>87±03</b></td>
+                    <td style="word-break:break-word;">83±03</td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Call 911</b> <br> <p style="font-size:12px"> "call 911" </p> </td>
+                    <td style="word-break:break-word;"><b>53±03</b></td>
+                    <td style="word-break:break-word;">33±09</td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Language</b> <br> <p style="font-size:12px"> "go to 'add a language' page in setting" </p> </td>
+                    <td style="word-break:break-word;">43±09</td>
+                    <td style="word-break:break-word;"><b>47±17</b></td>
+                  </tr>
+                </table>
+              </div>
+              <!-- End Table (MLLM) -->
+
+
+              <!-- Table (VLUI) -->
+              <div title="VLUI Agent Analysis" class="lib_examples" id="BoardPanel4" style="display: none;">
+                <md-block>
+                  VLUI agents are trained from scratch.
+                </md-block>
+
+                <table class="table performanceTable">
+                  <tr>
+                    <th>Task<br>Instruction</th>
+                    <th>VLUI Agent<br>(w/ 07 environments)</th>
+                    <th>VLUI Agent<br>(w/ 21 environments)</th>
+                    <th>VLUI Agent<br>(w/ 35 environments)</th>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Airplane</b> <br> <p style="font-size:12px"> "turn on the airplane mode" </p> </td>
+                    <td style="word-break:break-word;">27±07</td>
+                    <td style="word-break:break-word;">57±03</td>
+                    <td style="word-break:break-word;"><b>63±03</b></td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Alarm 1</b> <br> <p style="font-size:12px"> "turn on the alarm at 9 am" </p> </td>
+                    <td style="word-break:break-word;">20±12</td>
+                    <td style="word-break:break-word;"><b>67±03</b></td>
+                    <td style="word-break:break-word;"><b>67±03</b></td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Alarm 2</b> <br> <p style="font-size:12px"> "create an alarm at 10:30 am" </p> </td>
+                    <td style="word-break:break-word;">07±03</td>
+                    <td style="word-break:break-word;">37±03</td>
+                    <td style="word-break:break-word;"><b>47±03</b></td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Brightness</b> <br> <p style="font-size:12px"> "decrease the screen brightness in setting" </p> </td>
+                    <td style="word-break:break-word;">20±00</td>
+                    <td style="word-break:break-word;"><b>60±00</b></td>
+                    <td style="word-break:break-word;"><b>60±00</b></td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Call 911</b> <br> <p style="font-size:12px"> "call 911" </p> </td>
+                    <td style="word-break:break-word;">23±03</td>
+                    <td style="word-break:break-word;">57±03</td>
+                    <td style="word-break:break-word;"><b>60±00</b></td>
+                  </tr>
+
+                  <tr>
+                    <td> <b>Language</b> <br> <p style="font-size:12px"> "go to 'add a language' page in setting" </p> </td>
+                    <td style="word-break:break-word;">20±00</td>
+                    <td style="word-break:break-word;">40±00</td>
+                    <td style="word-break:break-word;"><b>63±03</b></td>
+                  </tr>
+                </table>
+              </div>
+              <!-- End Table (VLUI) -->
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End baselines section -->
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{lee2024benchmarking,
+      title={Benchmarking Mobile Device Control Agents Across Diverse Configurations}, 
+      author={Juyong Lee and Taywon Min and Minyong An and Changyeon Kim and Kimin Lee},
+      year={2024},
+      booktitle={ICLR 2024 Workshop on Generative Models for Decision Making},
+}</code></pre>
+  </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>

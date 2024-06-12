@@ -95,20 +95,20 @@
             <div class="column has-text-centered">
               <div class="publication-links">
               <span class="link-block">
-                <a href="" target="_blank"
+                <a href="https://arxiv.org/abs/2404.16660" target="_blank"
                 class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                   <i class="ai ai-arxiv"></i>
                 </span>
-                <span>arXiv (ICLR version)</span>
+                <span>Paper (ver.1)</span>
               </a>
             </span>
 
             <!-- Github link -->
             <span class="link-block">
-              <a href="https://github.com/b-moca/b-moca" target="_blank" class="external-link button is-normal is-rounded is-dark">
+              <a href="https://github.com/gimme1dollar/b-moca/tree/release/ver.2.4.2" target="_blank" class="external-link button is-normal is-rounded is-dark">
                 <span class="icon"><i class="fab fa-github"></i></span>
-                <span>Code (update version)</span>
+                <span>Code (ver.2.4)</span>
               </a>
             </span>
 
@@ -120,22 +120,47 @@
   </div>
 </section>
 
-
 <!-- Header section -->
-<section class="hero is-small">
+<section class="hero is-light">
   <div class="hero-body">
     <h2 class="subtitle has-text-centered" style="font-size: 24px;">
       <em><strong>B-MoCA</strong></em> can serve as a testbed for mobile device control agents across diverse device configurations
     </h2>
   </div>
-</section>
+  <div class="hero-body">
+    <div class="container">
+      <md-block>
+        <h2 class="subtitle" style="font-size: 24px;">
+        <span class="negative-br"></span>
+        [Release Notes]
+        </h2>
+        <strong>(ver.2.4)</strong> 
+        We added 39 more daily tasks (total 138 tasks, as removing a task).
+        We show <a href="#result_div"><u>the success rates of representative agents (GPT-4o and Gemini-1.5-pro) on 138 tasks</u></a> and the success rates of all baseline agents (GPT-4o, Gemini-1.5-pro, Llama-3, and custom agents) on six challenging representative tasks below.
+        The paper (ver.2) will be updated soon.
+        <br>
+        <span class="small-br"></span>
+        <strong>(ver.2)</strong> 
+        We added 30 more daily tasks (total 100 tasks).
+        We updated the <u>observation parsing function</u> (<a href="https://github.com/gimme1dollar/b-moca/blob/release/ver.2.0.1/bmoca/agent/foundation_model/utils.py#L29">link</a>), which improves the performance of LLM agents by a large margin.
+        <br>
+        <span class="small-br"></span>
+        <strong>(ver.1)</strong> 
+        First public release!
+        We presented 70 daily tasks on interactive real Android emulator environments with a <u>randomization feature over the device settings</u>.
+        We conducted an analysis using GPT-4/GPT-4V and Gemini-1.0-pro/Gemini-1.0-pro-V.
+        The paper (ver.1; <a href="https://arxiv.org/abs/2404.16660v1">link</a>) and code (ver.1; <a href="https://github.com/gimme1dollar/b-moca/tree/release/ver.1.2.0">link</a>) are available.
+    </md-block>
+    </div>
+</section> 
 <!-- Header section -->
+
 
 <!-- Demonstrations section -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-
+      <br>
       <div class="content has-text-centered">
         <div class="columns is-centered">
           <div class="column">
@@ -256,7 +281,7 @@
   
       <md-block>
         <br>
-        B-MoCA presents 100 daily tasks that are grounded in realistic situations.
+        B-MoCA presents 138 daily tasks that are grounded in realistic situations.
         The tasks span 10+ applications, including the thrid-party app (e.g., Instagram).
         These require the agent fundamental skills for controlling mobile devices, 
         including navigation over the multiple pages and manipulating various UI elements.
@@ -317,300 +342,47 @@
 </section>
 <!-- End Environment section -->
 
+
 <!-- Baselines section -->
 <section>
-  <div class="container">
+  <div class="container" id="result_div">
 
     <div class="title-color">
-        <h2 class="title" style="text-align: center; color: white;"> Baselines Analysis</h2>
+        <h2 class="title" style="text-align: center; color: white;"> Experimental Results</h2>
     </div>
+  </div>
 
+  <div class="container" id="result_div">
     <md-block>
       <br>
-      <!-- By employing the environments we configure, we benchmark state-of-the-art closed-source LLMs 
-      (Gemini-Pro and GPT-4) and MLLMs (Gemini-Pro-V and GPT-4V) as well as VLUI agents trained from scratch. 
-      We also compare open-source LLMs (Llama2, <span style="color: red">Llama3</span>, and AgentLM).
-      We further analyze different design choices (e.g., Set-of-Mark prompting for MLLM agents or effects of
-      the number of training environments for VLUI agents) 
-      for the agents. The lack of proficiencies of these agents in complex scenarios calls for future work! -->
-      By employing the environments we configure, we benchmark state-of-the-art closed-source/open-source LLMs 
-      (GPT-4o, Gemini-1.5-pro, and Llama3) and MLLMs (GPT-4o, Gemini-1.5-pro) as well as custom agents trained from scratch. 
-      We further analyze different design choices for the agents. 
-      The lack of proficiencies of these agents in complex scenarios calls for future work!
-      <br><br>
-      <div align="center">For more details, please refer the paper!</div>
+      First, we show the proficiency of agents using state-of-the-art closed-source LLMs (i.e., GPT-4o and Gemini-1.5-pro in zero-shot) on 138 tasks. 
+      The agents are evaluated on three test environments we configure: a vanilla environment with all target applications in the home screen (named, "Plain"), an environment with icons in the home screen and size setting randomized (named, "Random 1"), and an environment with icons in the home screen, size, wallpaper, and language setting randomized (named, "Random 2").
+      The different success rates among environments reveal the unique challenge of B-MoCA in assessing the generalization ability of mobile device control agents.
     </md-block>
   </div>
 
-  <!-- <div class="cover" id="contentCover">
-    <div class="container-t">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="infoCard">
-            <div class="infoBody">
-              <div class="tabs is-centered example_lst">
-                <ul>
-                  <li class="is-active"><a title="Main Results">Main Results</a></li>
-                  <li><a title="LLM Agent Analysis">LLM Agent Analysis</a></li>
-                  <li><a title="MLLM Agent Analysis">MLLM Agent Analysis</a></li>
-                  <li><a title="VLUI Agent Analysis">VLUI Agent Analysis</a></li>
-                </ul>
-              </div>
+  <div class="hero-body">
+    <img src="static/images/results/138_tasks.png" alt="MY ALT TEXT"
+      style="display: block; margin: 0 auto; width: 60%; height: auto;"
+      />
+  </div>
 
-              <script type="text/javascript">
-                document.querySelectorAll(".example_lst li").forEach(e => {
-                  e.addEventListener("click", Click_1)
-                })
+  <div class="container" id="result_div">
+    <md-block>
+      Moreover, we benchmark state-of-the-art closed-source/open-source LLMs (GPT-4o, Gemini-1.5-pro, and Llama3 in few-shot) and MLLMs (GPT-4o, Gemini-1.5-pro in few-shot) as well as custom agents trained from scratch on six challenging representative tasks. 
+      <!-- The instructions for six representative tasks are "create alarm at 10:30 am" (named, "Alarm(simple)"), "create alarm at 10:30 am on every weekday" (named, "Alarm(complex)"), "go to 'add a language' page in setting" (named, "Language"), "input 'cos(180)' in Calculator" (named, "Calculator"), "call the white house (202-456-1111)" (named, "Call"), and "disable the top 2 and 'randomizer' topics at feed customize setting on Wikipedia and go back to the feed" (named, "Wikipedia"). -->
+      The agents are evaluated on all 10 test environments we configure.
+      The lack of proficiencies of these agents in complex scenarios calls for future work.
+      For more details, please refer to the paper (which will be updated soon).
+    </md-block>
+  </div>
 
-                function Click_1(eve) {
-                  const iTxt = eve.srcElement.innerText
-                  for (let v of document.querySelectorAll(".example_lst a")) {
-                    if (iTxt === v.innerText) {
-                      v.parentElement.className = "is-active";
-                    } else {
-                      v.parentElement.className = "";
-                    }
-                  }
-                  for (let block of document.getElementsByClassName('lib_examples')) {
-                    block.style.display = (block.title === iTxt) ? 'block' : 'none';
-                  }
-                }
-                
-              </script>
+  <div class="hero-body">
+    <img src="static/images/results/6_tasks.png" alt="MY ALT TEXT"
+      style="display: block; margin: 0 auto; width: 60%; height: auto;"
+    />
+  </div>
 
-              <div title="Main Results" class="lib_examples" id="BoardPanel1" style="display: block;">
-                <md-block>
-                  LLM agents are with three few-shot examples. MLLM agents are with one (Gemini-Pro-V) or three (GPT-4V) examples but without Set-of-Mark.
-                </md-block>
-
-                <table class="table performanceTable">
-                  <tr>
-                    <th>Task<br>Instruction</th>
-                    <th>LLM Agent<br>(Gemini-Pro)</th>
-                    <th>LLM Agent<br>(GPT-4)</th>
-                    <th>MLLM Agent<br>(Gemini-Pro-V)</th>
-                    <th>MLLM Agent<br>(GPT-4V)</th>
-                    <th>VLUI Agent<br>(from scrtach)</th>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Airplane</b> <br> <p style="font-size:12px"> "turn on the airplane mode" </p> </td>
-                    <td style="word-break:break-word;">47±09</td>
-                    <td style="word-break:break-word;">73±12</td>
-                    <td style="word-break:break-word;">13±09</td>
-                    <td style="word-break:break-word;"><b>80±06</b></td>
-                    <td style="word-break:break-word;">63±03</td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Alarm 1</b> <br> <p style="font-size:12px"> "turn on the alarm at 9 am" </p> </td>
-                    <td style="word-break:break-word;">30±06</td>
-                    <td style="word-break:break-word;"><b>67±03</b></td>
-                    <td style="word-break:break-word;">13±03</td>
-                    <td style="word-break:break-word;">60±15</td>
-                    <td style="word-break:break-word;"><b>67±03</b></td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Alarm 2</b> <br> <p style="font-size:12px"> "create an alarm at 10:30 am" </p> </td>
-                    <td style="word-break:break-word;">00±00</td>
-                    <td style="word-break:break-word;">00±00</td>
-                    <td style="word-break:break-word;">00±00</td>
-                    <td style="word-break:break-word;">23±03</td>
-                    <td style="word-break:break-word;"><b>47±03</b></td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Brightness</b> <br> <p style="font-size:12px"> "decrease the screen brightness in setting" </p> </td>
-                    <td style="word-break:break-word;">20±06</td>
-                    <td style="word-break:break-word;">73±09</td>
-                    <td style="word-break:break-word;">00±00</td>
-                    <td style="word-break:break-word;"><b>87±03</b></td>
-                    <td style="word-break:break-word;">60±00</td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Call 911</b> <br> <p style="font-size:12px"> "call 911" </p> </td>
-                    <td style="word-break:break-word;">03±03</td>
-                    <td style="word-break:break-word;">03±03</td>
-                    <td style="word-break:break-word;">03±03</td>
-                    <td style="word-break:break-word;">53±03</td>
-                    <td style="word-break:break-word;"><b>60±00</b></td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Language</b> <br> <p style="font-size:12px"> "go to 'add a language' page in setting" </p> </td>
-                    <td style="word-break:break-word;">00±00</td>
-                    <td style="word-break:break-word;">38±12</td>
-                    <td style="word-break:break-word;">00±00</td>
-                    <td style="word-break:break-word;">43±09</td>
-                    <td style="word-break:break-word;"><b>63±03</b></td>
-                  </tr>
-                </table>
-              </div>
-
-
-              <div title="LLM Agent Analysis" class="lib_examples" id="BoardPanel2" style="display: none;">
-                <md-block>
-                  LLM agents are in zero-shot.
-                </md-block>
-
-                <table class="table performanceTable">
-                  <tr>
-                    <th>Task<br>Instruction</th>
-                    <th>LLM Agent<br>(Llama2-7b)</th>
-                    <th>LLM Agent<br>(AgentLM-7b)</th>
-                    <th>LLM Agent<br>(<span style="color: red">Llama3</span>-8b)</th>
-                    <th>LLM Agent<br>(Gemini-Pro)</th>
-                    <th>LLM Agent<br>(GPT-4)</th>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Airplane</b> <br> <p style="font-size:12px"> "turn on the airplane mode" </p> </td>
-                    <td style="word-break:break-word;">00±00</td>
-                    <td style="word-break:break-word;">00±00</td>
-                    <td style="word-break:break-word;">63±03</td>
-                    <td style="word-break:break-word;"><b>87±03</b></td>
-                    <td style="word-break:break-word;">53±03</td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Alarm 1</b> <br> <p style="font-size:12px"> "turn on the alarm at 9 am" </p> </td>
-                    <td style="word-break:break-word;">00±00</td>
-                    <td style="word-break:break-word;">00±00</td>
-                    <td style="word-break:break-word;">00±00</td>
-                    <td style="word-break:break-word;">27±03</td>
-                    <td style="word-break:break-word;"><b>42±13</b></td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Brightness</b> <br> <p style="font-size:12px"> "decrease the screen brightness in setting" </p> </td>
-                    <td style="word-break:break-word;">00±00</td>
-                    <td style="word-break:break-word;">00±00</td>
-                    <td style="word-break:break-word;">17±03</td>
-                    <td style="word-break:break-word;">05±03</td>
-                    <td style="word-break:break-word;"><b>73±12</b></td>
-                  </tr>
-
-                </table>
-              </div>
-
-
-              <div title="MLLM Agent Analysis" class="lib_examples" id="BoardPanel3" style="display: none;">
-                <md-block>
-                  MLLM agents (GPT-4V) are with three few-shot examples.
-                </md-block>
-
-                <table class="table performanceTable">
-                  <tr>
-                    <th>Task<br>Instruction</th>
-                    <th>MLLM Agent<br>(w/o Set-of-Mark)</th>
-                    <th>MLLM Agent<br>(w/ Set-of-Mark)</th>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Airplane</b> <br> <p style="font-size:12px"> "turn on the airplane mode" </p> </td>
-                    <td style="word-break:break-word;">80±06</td>
-                    <td style="word-break:break-word;"><b>83±03</b></td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Alarm 1</b> <br> <p style="font-size:12px"> "turn on the alarm at 9 am" </p> </td>
-                    <td style="word-break:break-word;">60±15</td>
-                    <td style="word-break:break-word;"><b>62±09</b></td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Alarm 2</b> <br> <p style="font-size:12px"> "create an alarm at 10:30 am" </p> </td>
-                    <td style="word-break:break-word;"><b>23±03</b></td>
-                    <td style="word-break:break-word;">17±03</td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Brightness</b> <br> <p style="font-size:12px"> "decrease the screen brightness in setting" </p> </td>
-                    <td style="word-break:break-word;"><b>87±03</b></td>
-                    <td style="word-break:break-word;">83±03</td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Call 911</b> <br> <p style="font-size:12px"> "call 911" </p> </td>
-                    <td style="word-break:break-word;"><b>53±03</b></td>
-                    <td style="word-break:break-word;">33±09</td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Language</b> <br> <p style="font-size:12px"> "go to 'add a language' page in setting" </p> </td>
-                    <td style="word-break:break-word;">43±09</td>
-                    <td style="word-break:break-word;"><b>47±17</b></td>
-                  </tr>
-                </table>
-              </div>
-
-
-              <div title="VLUI Agent Analysis" class="lib_examples" id="BoardPanel4" style="display: none;">
-                <md-block>
-                  VLUI agents are trained from scratch.
-                </md-block>
-
-                <table class="table performanceTable">
-                  <tr>
-                    <th>Task<br>Instruction</th>
-                    <th>VLUI Agent<br>(w/ 07 environments)</th>
-                    <th>VLUI Agent<br>(w/ 21 environments)</th>
-                    <th>VLUI Agent<br>(w/ 35 environments)</th>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Airplane</b> <br> <p style="font-size:12px"> "turn on the airplane mode" </p> </td>
-                    <td style="word-break:break-word;">27±07</td>
-                    <td style="word-break:break-word;">57±03</td>
-                    <td style="word-break:break-word;"><b>63±03</b></td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Alarm 1</b> <br> <p style="font-size:12px"> "turn on the alarm at 9 am" </p> </td>
-                    <td style="word-break:break-word;">20±12</td>
-                    <td style="word-break:break-word;"><b>67±03</b></td>
-                    <td style="word-break:break-word;"><b>67±03</b></td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Alarm 2</b> <br> <p style="font-size:12px"> "create an alarm at 10:30 am" </p> </td>
-                    <td style="word-break:break-word;">07±03</td>
-                    <td style="word-break:break-word;">37±03</td>
-                    <td style="word-break:break-word;"><b>47±03</b></td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Brightness</b> <br> <p style="font-size:12px"> "decrease the screen brightness in setting" </p> </td>
-                    <td style="word-break:break-word;">20±00</td>
-                    <td style="word-break:break-word;"><b>60±00</b></td>
-                    <td style="word-break:break-word;"><b>60±00</b></td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Call 911</b> <br> <p style="font-size:12px"> "call 911" </p> </td>
-                    <td style="word-break:break-word;">23±03</td>
-                    <td style="word-break:break-word;">57±03</td>
-                    <td style="word-break:break-word;"><b>60±00</b></td>
-                  </tr>
-
-                  <tr>
-                    <td> <b>Language</b> <br> <p style="font-size:12px"> "go to 'add a language' page in setting" </p> </td>
-                    <td style="word-break:break-word;">20±00</td>
-                    <td style="word-break:break-word;">40±00</td>
-                    <td style="word-break:break-word;"><b>63±03</b></td>
-                  </tr>
-                </table>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div> -->
 </section>
 <!-- End baselines section -->
 
@@ -620,7 +392,7 @@
     <h2 class="title">BibTeX</h2>
     <pre><code>@inproceedings{lee2024benchmarking,
       title={Benchmarking Mobile Device Control Agents Across Diverse Configurations}, 
-      author={Juyong Lee and Taywon Min and Minyong An and Changyeon Kim and Kimin Lee},
+      author={Juyong Lee and Taywon Min and Minyong An and Dongyoon Hahm and Haeone Lee and Changyeon Kim and Kimin Lee},
       year={2024},
       booktitle={ICLR 2024 Workshop on Generative Models for Decision Making},
 }</code></pre>

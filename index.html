@@ -70,10 +70,16 @@
                 <a href="" target="_blank">Taywon Min</a><sup>2</sup>,
               </span>
               <span class="author-block">
-                <a href="" target="_blank">Minyong An</a><sup>3</sup>,
+                <a href="" target="_blank">Minyong Ahn</a><sup>3</sup>
               </span>
               <span class="author-block">
-                <a href="https://changyeon.page/" target="_blank">Changyeon Kim</a><sup>1</sup>,
+                <a href="" target="_blank">Dongyoon Hahm</a><sup>1</sup>
+              </span>
+              <span class="author-block">
+                <a href="" target="_blank">Haeone Lee</a><sup>1</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://changyeon.page/" target="_blank">Changyoen Kim</a><sup>1</sup>
               </span>
               <span class="author-block">
                 <a href="https://sites.google.com/view/kiminlee" target="_blank">Kimin Lee</a><sup>1</sup>
@@ -89,20 +95,20 @@
             <div class="column has-text-centered">
               <div class="publication-links">
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2404.16660" target="_blank"
+                <a href="" target="_blank"
                 class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                   <i class="ai ai-arxiv"></i>
                 </span>
-                <span>arXiv</span>
+                <span>arXiv (ICLR version)</span>
               </a>
             </span>
 
             <!-- Github link -->
             <span class="link-block">
-              <a href="https://github.com/gimme1dollar/b-moca" target="_blank" class="external-link button is-normal is-rounded is-dark">
+              <a href="https://github.com/b-moca/b-moca" target="_blank" class="external-link button is-normal is-rounded is-dark">
                 <span class="icon"><i class="fab fa-github"></i></span>
-                <span>Code</span>
+                <span>Code (update version)</span>
               </a>
             </span>
 
@@ -238,6 +244,38 @@
 </section>
 < End demonstration section -->
 
+
+<!-- Task section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+
+      <div class="title-color">
+          <h2 class="title" style="text-align: center; color: white;"> Numerous Daily Tasks </h2>
+      </div>
+  
+      <md-block>
+        <br>
+        B-MoCA presents 100 daily tasks that are grounded in realistic situations.
+        The tasks span 10+ applications, including the thrid-party app (e.g., Instagram).
+        These require the agent fundamental skills for controlling mobile devices, 
+        including navigation over the multiple pages and manipulating various UI elements.
+        The below shows the statistics of the tasks, distribution over the app category and the episode length.
+        <br><br>
+      </md-block>
+    </div>
+
+    <div class="hero-body">
+      <img src="static/images/task_statistics.png" alt="MY ALT TEXT"
+        style="display: block; margin: 0 auto; width: 70%; height: auto;"
+        />
+    </div>
+</div>
+</section>
+<!-- End Task section -->
+
+
+
 <!-- Environment section -->
 <section class="hero is-small">
   <div class="hero-body">
@@ -289,18 +327,22 @@
 
     <md-block>
       <br>
-      By employing the environments we configure, we benchmark state-of-the-art closed-source LLMs 
+      <!-- By employing the environments we configure, we benchmark state-of-the-art closed-source LLMs 
       (Gemini-Pro and GPT-4) and MLLMs (Gemini-Pro-V and GPT-4V) as well as VLUI agents trained from scratch. 
       We also compare open-source LLMs (Llama2, <span style="color: red">Llama3</span>, and AgentLM).
       We further analyze different design choices (e.g., Set-of-Mark prompting for MLLM agents or effects of
       the number of training environments for VLUI agents) 
-      for the agents. The lack of proficiencies of these agents in complex scenarios calls for future work!
+      for the agents. The lack of proficiencies of these agents in complex scenarios calls for future work! -->
+      By employing the environments we configure, we benchmark state-of-the-art closed-source/open-source LLMs 
+      (GPT-4o, Gemini-1.5-pro, and Llama3) and MLLMs (GPT-4o, Gemini-1.5-pro) as well as custom agents trained from scratch. 
+      We further analyze different design choices for the agents. 
+      The lack of proficiencies of these agents in complex scenarios calls for future work!
       <br><br>
+      <div align="center">For more details, please refer the paper!</div>
     </md-block>
   </div>
 
-  <div class="cover" id="contentCover">
-    <!-- Baseline. -->
+  <!-- <div class="cover" id="contentCover">
     <div class="container-t">
       <div class="row">
         <div class="col-md-12">
@@ -336,7 +378,6 @@
                 
               </script>
 
-              <!-- Table (Main Result) -->
               <div title="Main Results" class="lib_examples" id="BoardPanel1" style="display: block;">
                 <md-block>
                   LLM agents are with three few-shot examples. MLLM agents are with one (Gemini-Pro-V) or three (GPT-4V) examples but without Set-of-Mark.
@@ -400,17 +441,15 @@
                   <tr>
                     <td> <b>Language</b> <br> <p style="font-size:12px"> "go to 'add a language' page in setting" </p> </td>
                     <td style="word-break:break-word;">00±00</td>
-                    <td style="word-break:break-word;">43±09</td>
+                    <td style="word-break:break-word;">38±12</td>
                     <td style="word-break:break-word;">00±00</td>
                     <td style="word-break:break-word;">43±09</td>
                     <td style="word-break:break-word;"><b>63±03</b></td>
                   </tr>
                 </table>
               </div>
-              <!-- End Table (Main Result) -->
 
 
-              <!-- Table (LLM) -->
               <div title="LLM Agent Analysis" class="lib_examples" id="BoardPanel2" style="display: none;">
                 <md-block>
                   LLM agents are in zero-shot.
@@ -455,10 +494,8 @@
 
                 </table>
               </div>
-              <!-- End Table (LLM) -->
 
 
-              <!-- Table (MLLM) -->
               <div title="MLLM Agent Analysis" class="lib_examples" id="BoardPanel3" style="display: none;">
                 <md-block>
                   MLLM agents (GPT-4V) are with three few-shot examples.
@@ -508,10 +545,8 @@
                   </tr>
                 </table>
               </div>
-              <!-- End Table (MLLM) -->
 
 
-              <!-- Table (VLUI) -->
               <div title="VLUI Agent Analysis" class="lib_examples" id="BoardPanel4" style="display: none;">
                 <md-block>
                   VLUI agents are trained from scratch.
@@ -568,8 +603,6 @@
                   </tr>
                 </table>
               </div>
-              <!-- End Table (VLUI) -->
-
 
             </div>
           </div>
@@ -577,7 +610,7 @@
 
       </div>
     </div>
-  </div>
+  </div> -->
 </section>
 <!-- End baselines section -->
 
@@ -586,7 +619,7 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@inproceedings{lee2024benchmarking,
-      title={Benchmarking Mobile Device Control Agents across Diverse Configurations}, 
+      title={Benchmarking Mobile Device Control Agents Across Diverse Configurations}, 
       author={Juyong Lee and Taywon Min and Minyong An and Changyeon Kim and Kimin Lee},
       year={2024},
       booktitle={ICLR 2024 Workshop on Generative Models for Decision Making},

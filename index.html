@@ -175,17 +175,19 @@
       <div class="title-color">
           <h2 class="title" style="text-align: center; color: white;"> LCoW </h2>
       </div>
-  
-      <md-block>
-        <br>
-        LCoW is a framework for training the module that contextualizes complicated web page, thereby enhancing the decision-making capabilities of LLM agents in web automation.
-        The contextualization module transforms complex web page into a comprehensible and informative format, enabling LLM agents to make more accurate decisions for web navigation.
-        Our training algorithm to train the contextualization module consists of three phases:  (i) trajectory collection, (ii) sampling contextualized observations, and (iii) updating the contextualization module. 
-        For each observation from the collected trajectories, we generate multiple contextualized observations using the current contextualization module. 
-        Each observation is then assigned a reward based on whether a set of LLM agents can accurately predict the correct action given the contextualized observation. 
-        Finally, we select the one with the highest reward as the target and train the contextualization module to maximize the likelihood of the target given the original raw observation.
-        <br><br>
-      </md-block>
+      
+      <div style="width: 80%; margin: auto;">
+        <md-block>
+          <br>
+          LCoW is a framework for training the module that contextualizes complicated web page, thereby enhancing the decision-making capabilities of LLM agents in web automation.
+          The contextualization module transforms complex web page into a comprehensible and informative format, enabling LLM agents to make more accurate decisions for web navigation.
+          Our training algorithm to train the contextualization module consists of three phases:  (i) trajectory collection, (ii) sampling contextualized observations, and (iii) updating the contextualization module. 
+          For each observation from the collected trajectories, we generate multiple contextualized observations using the current contextualization module. 
+          Each observation is then assigned a reward based on whether a set of LLM agents can accurately predict the correct action given the contextualized observation. 
+          Finally, we select the one with the highest reward as the target and train the contextualization module to maximize the likelihood of the target given the original raw observation.
+          <br><br>
+        </md-block>
+      </div>
     </div>
 </div>
 </section>
@@ -200,37 +202,43 @@
       <div class="title-color">
           <h2 class="title" style="text-align: center; color: white;"> Experiments </h2>
       </div>
-      <md-block>
+      <div style="width: 80%; margin: auto;">
+        <md-block>
         <br>
         We investigate the efficacy of LCoW across multiple LLM agents in WebShop. 
         For all LLM agents, LCoW consistently improves both success rate and reward over iterations, surpassing self-contextualization (self-ctx) and even human expert-level success rate (59.6%) by the third iteration.
         Additionally, LCoW is also effective when combined with Llama-3.1-70B, which was not used for computing the action-matching reward (i.e., unseen) during training the contextualization module.
         <br><br>
-      </md-block>
+        </md-block>
+      </div>
       <div class="columns is-centered">
         <img src="./static/images/results/webshop.png" width="600" style='padding-left:10px;' class="interpolation-image"
           alt="Interpolate start reference image.">
       </div>
-
-      <md-block>
+      
+      <div style="width: 80%; margin: auto;">
+        <md-block>
         <br>
         We evaluate the success rate of five LLM agents with varying scales on 165 tasks in the WorkArena benchmark, which features more realistic web environment.
         Single iteration of LCoW shows improvement of success rate over all LLMs, even generalized to Llama-3.1-70B and Llama-3.1-8B, which were not used for computing the action matching reward.
         Especially, relatively small LLM (i.e., Llama-3.1-8B) struggles to accomplish task given complicated web pages, while improves by 36% given observation contextualized by LCoW.
         <br><br>
-      </md-block>
+        </md-block>
+      </div>
       <div class="columns is-centered">
         <img src="./static/images/results/workarena.png" width="600" style='padding-left:10px;' class="interpolation-image"
           alt="Interpolate start reference image.">
       </div>
 
-      <md-block>
+      <div style="width: 80%; margin: auto;">
+        <md-block>
         <br>
         We analyze whether the (1) training contextualization using seed demonstration is more effective than directly training LLM agent through behavior cloning, and (2) contextualization module trained on certain types of tasks generalizes to unseen types of tasks.
         As shown in the Figure (left), directly training the Llama-3.1-8B-Instruct using seed demonstration achieves 23.6% success rate on 165 WorkArena tasks, while Llama-3.1-8B-Instruct combined with LCoW-trained contextualization module (which is trained based on same number of seed demonstrations) achieves 37.0% success rate.
         Additionally, as shown in Figure (right), contextualization module improves task success rate by approximately 6% on tasks belonging to both seen task types and unseen task types. 
         <br><br>
-      </md-block>
+        </md-block>
+      </div>
       <div class="columns is-centered">
         <img src="./static/images/results/bc_generalization.png" width="800" style='padding-left:10px;' class="interpolation-image"
           alt="Interpolate start reference image.">
